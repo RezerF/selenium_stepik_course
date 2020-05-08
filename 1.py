@@ -1,13 +1,7 @@
-from selenium import webdriver
+def test_substring(full_string, substring):
+    # ваша реализация, напишите assert и сообщение об ошибке
 
-browser = webdriver.Chrome()
-# говорим WebDriver ждать все элементы в течение 5 секунд
-browser.implicitly_wait(5)
+    assert substring in full_string, f"expected '{substring}' to be substring of '{full_string}'"
 
-browser.get("http://suninjuly.github.io/wait2.html")
 
-button = browser.find_element_by_id("verify")
-button.click()
-message = browser.find_element_by_id("verify_message")
-
-assert "successful" in message.text
+test_substring("fulltext", "ll2")
