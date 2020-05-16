@@ -1,7 +1,6 @@
-def test_substring(full_string, substring):
-    # ваша реализация, напишите assert и сообщение об ошибке
+from selenium import webdriver
 
-    assert substring in full_string, f"expected '{substring}' to be substring of '{full_string}'"
+# инициализируем драйвер браузера. После этой команды вы должны увидеть новое открытое окно браузера
+driver = webdriver.Firefox()
 
-
-test_substring("fulltext", "ll2")
+driver.get("https://stepik.org/lesson/25969/step/8")
