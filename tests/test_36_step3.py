@@ -17,13 +17,13 @@ hide_string = ""
 
 
 @pytest.mark.parametrize('link',[
-#'https://stepik.org/lesson/236895/step/1',
-#'https://stepik.org/lesson/236896/step/1',
-#'https://stepik.org/lesson/236897/step/1',
+'https://stepik.org/lesson/236895/step/1',
+'https://stepik.org/lesson/236896/step/1',
+'https://stepik.org/lesson/236897/step/1',
 'https://stepik.org/lesson/236898/step/1',
 'https://stepik.org/lesson/236899/step/1',
-#'https://stepik.org/lesson/236903/step/1',
-#'https://stepik.org/lesson/236904/step/1',
+'https://stepik.org/lesson/236903/step/1',
+'https://stepik.org/lesson/236904/step/1',
 'https://stepik.org/lesson/236905/step/1'
 ])
 def test_get_feedback(browser, link): # в качестве аргумента передаем функцию фикстуры и параметр для перебора
@@ -31,6 +31,7 @@ def test_get_feedback(browser, link): # в качестве аргумента �
     input1 = browser.find_element_by_css_selector('textarea[placeholder="Напишите ваш ответ здесь..."]')
     y = func_answ()
     input1.send_keys(y)
+    time.sleep(2)
     button = browser.find_element_by_css_selector('button.submit-submission').click()
     asser = browser.find_element_by_css_selector('pre.smart-hints__hint') # возвращает абракадабру чтобы переветси в текст используем метод текст
     global hide_string
